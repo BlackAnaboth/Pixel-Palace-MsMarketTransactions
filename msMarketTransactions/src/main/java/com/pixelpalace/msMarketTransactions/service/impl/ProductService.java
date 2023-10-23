@@ -4,6 +4,7 @@ import com.pixelpalace.msMarketTransactions.dto.ProductDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductListDTO;
 import com.pixelpalace.msMarketTransactions.exception.EmptyProductsException;
 import com.pixelpalace.msMarketTransactions.exception.NoSuchCategoryException;
+import com.pixelpalace.msMarketTransactions.exception.ProductNotFoundException;
 import com.pixelpalace.msMarketTransactions.model.Category;
 import com.pixelpalace.msMarketTransactions.model.Product;
 import com.pixelpalace.msMarketTransactions.repository.IProductRepository;
@@ -13,6 +14,7 @@ import com.pixelpalace.msMarketTransactions.util.CategoryTypeEnum;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Optional;
 
 @Service
 public class ProductService implements IProductService {
@@ -41,6 +43,28 @@ public class ProductService implements IProductService {
                 .orElseThrow(()-> new NoSuchCategoryException("No existe la categoria"));
 
         final List<Product> products = productRepository.findByCategoryName(category1.getName());
+
+        return createProductList(products);
+    }
+
+    @Override
+    public ProductDTO getProductById(Long id) {
+        Optional<Product> product = productRepository.findById(id);
+
+        if (product.isEmpty()) {
+            throw new ProductNotFoundException("No se ha encontrado el producto");
+        }
+
+        return modelMapper.map(product, ProductDTO.class);
+    }
+
+    @Override
+    public ProductListDTO getProductByName(String keyword) {
+        List<Product> products = productRepository.findByNameContaining(keyword);
+
+        if (products.isEmpty()) {
+            throw new ProductNotFoundException("No se ha encontrado ningún producto");
+        }
 
         return createProductList(products);
     }
