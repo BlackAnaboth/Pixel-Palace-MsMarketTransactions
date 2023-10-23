@@ -12,19 +12,29 @@ import java.util.List;
 @Setter
 @AllArgsConstructor
 @NoArgsConstructor
+@Entity
+@Table(name = "Transactions")
 public class Transaction {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    @Column(name = "name")
-    private String name;
+    @Column(name = "status")
+    private String status;
 
-    @Column(name = "description")
-    private String description;
+    @Column(name = "code")
+    private String code;
 
-    @ManyToMany
-    @JoinColumn(name = "id_products")
-    private List<Product> products;
+    //@ManyToOne
+    //@JoinColumn(name = "user_id", nullable = false)
+    //private User user;
+
+    @ManyToOne
+    @JoinColumn(name = "product_id", nullable = false)
+    private Product product;
+
+    @ManyToOne
+    @JoinColumn(name = "platform_id", nullable = false)
+    private Platform platform;
 }

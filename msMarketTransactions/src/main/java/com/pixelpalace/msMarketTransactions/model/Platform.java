@@ -13,7 +13,7 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "platforms")
+@Table(name = "Platforms")
 public class Platform {
 
     @Id
@@ -27,6 +27,12 @@ public class Platform {
     private String description;
 
     @ManyToMany
-    @JoinColumn(name = "id_products")
-    private List<Product> product;
+    @JoinTable(
+            name = "ProductPlatforms",
+            joinColumns = @JoinColumn(name = "platform_id"),
+            inverseJoinColumns = @JoinColumn(name = "product_id" ))
+    private List<Product> products;
+
+    @OneToMany(mappedBy = "platform")
+    private List<Transaction> transactions;
 }
