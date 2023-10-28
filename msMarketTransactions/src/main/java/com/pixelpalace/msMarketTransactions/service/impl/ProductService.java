@@ -2,18 +2,24 @@ package com.pixelpalace.msMarketTransactions.service.impl;
 
 import com.pixelpalace.msMarketTransactions.dto.ProductDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductListDTO;
+import com.pixelpalace.msMarketTransactions.dto.request.NewProductDTO;
+import com.pixelpalace.msMarketTransactions.dto.request.ProductRequestDTO;
 import com.pixelpalace.msMarketTransactions.exception.EmptyProductsException;
-import com.pixelpalace.msMarketTransactions.exception.NoSuchCategoryException;
+import com.pixelpalace.msMarketTransactions.exception.CategoryNotFoundException;
+import com.pixelpalace.msMarketTransactions.exception.PlatformNotFoundException;
 import com.pixelpalace.msMarketTransactions.exception.ProductNotFoundException;
 import com.pixelpalace.msMarketTransactions.model.Category;
+import com.pixelpalace.msMarketTransactions.model.Platform;
 import com.pixelpalace.msMarketTransactions.model.Product;
 import com.pixelpalace.msMarketTransactions.repository.IProductRepository;
 import com.pixelpalace.msMarketTransactions.service.ICategoryService;
+import com.pixelpalace.msMarketTransactions.service.IPlatformService;
 import com.pixelpalace.msMarketTransactions.service.IProductService;
 import com.pixelpalace.msMarketTransactions.util.CategoryTypeEnum;
 import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import java.util.List;
+import java.util.Objects;
 import java.util.Optional;
 
 @Service
@@ -21,11 +27,13 @@ public class ProductService implements IProductService {
 
     private final IProductRepository productRepository;
     private final ICategoryService categoryService;
+    private final IPlatformService platformService;
     private ModelMapper modelMapper;
 
-    public ProductService(IProductRepository productRepository, ICategoryService categoryService) {
+    public ProductService(IProductRepository productRepository, ICategoryService categoryService, IPlatformService platformService) {
         this.productRepository = productRepository;
         this.categoryService = categoryService;
+        this.platformService = platformService;
         this.modelMapper = new ModelMapper();
     }
 
@@ -40,7 +48,7 @@ public class ProductService implements IProductService {
     public ProductListDTO getProducts(CategoryTypeEnum category) {
 
         Category category1 = categoryService.findByName(category)
-                .orElseThrow(()-> new NoSuchCategoryException("No existe la categoria"));
+                .orElseThrow(()-> new CategoryNotFoundException("No existe la categoria"));
 
         final List<Product> products = productRepository.findByCategoryName(category1.getName());
 
@@ -49,13 +57,13 @@ public class ProductService implements IProductService {
 
     @Override
     public ProductDTO getProductById(Long id) {
-        Optional<Product> product = productRepository.findById(id);
+        Product product = productRepository.findById(id).orElse(null);
 
-        if (product.isEmpty()) {
+        if (product == null) {
             throw new ProductNotFoundException("No se ha encontrado el producto");
         }
 
-        return modelMapper.map(product, ProductDTO.class);
+        return productMapperToDTO(product);
     }
 
     @Override
@@ -69,6 +77,48 @@ public class ProductService implements IProductService {
         return createProductList(products);
     }
 
+    @Override
+    public ProductDTO createProduct(NewProductDTO newProductDTO) {
+        ProductDTO productDTO;
+        validations(newProductDTO.getCategoriesId(), newProductDTO.getPlatformsId());
+        try {
+            Product product = productRepository.save(productMapperToModel(newProductDTO));
+            productDTO = productMapperToDTO(product);
+            newProductDTO.getCategoriesId().stream().map(categoriaId -> categoryService.saveProduct(categoriaId, product));
+            newProductDTO.getPlatformsId().stream().map(platformId -> platformService.saveProduct(platformId, product));
+        } catch (Exception e) {
+            throw new RuntimeException("No se pudo guardar el juego. Por favor, intente más tarde");
+        }
+        return productDTO;
+    }
+
+    @Override
+    public ProductDTO updateProduct(ProductRequestDTO productDTO) {
+       Product result = productRepository.findById(productDTO.getId()).orElse(null);
+       if (result != null) {
+           try {
+               validations(productDTO.getCategoriesId(), productDTO.getPlatformsId());
+               result.setName(productDTO.getName());
+               result.setDescription(productDTO.getDescription());
+               result.setCategories(productDTO.getCategoriesId().stream()
+                       .map(categoryId -> categoryService.findById(categoryId).orElse(null))
+                       .filter(Objects::nonNull)
+                       .toList());
+               result.setPlatforms(productDTO.getPlatformsId().stream()
+                       .map(platformId -> platformService.findById(platformId).orElse(null))
+                       .filter(Objects::nonNull)
+                       .toList());
+               result.setPrice(productDTO.getPrice());
+               productRepository.save(result);
+           } catch (Exception e) {
+               throw new RuntimeException("No se pudo guardar el juego. Por favor, intente más tarde" + e);
+           }
+       } else {
+           throw new ProductNotFoundException("No se encontró el producto de Id " + productDTO.getId());
+       }
+        return productMapperToDTO(result);
+    }
+
     private ProductListDTO createProductList(final List<Product> products) {
         if (products.isEmpty()) {
             throw new EmptyProductsException("No se han encontrado productos");
@@ -76,9 +126,40 @@ public class ProductService implements IProductService {
 
         List<ProductDTO> productDTO = products
                 .stream()
-                .map(product -> modelMapper.map(product, ProductDTO.class))
+                .map(product -> productMapperToDTO(product))
                 .toList();
 
         return new ProductListDTO(productDTO);
+    }
+
+    private ProductDTO productMapperToDTO(final Product product) {
+        ProductDTO productDTO = modelMapper.map(product, ProductDTO.class);
+        productDTO.setCategories(product.getCategories().stream().map(Category::getName).toList());
+        productDTO.setPlatforms(product.getPlatforms().stream().map(Platform::getName).toList());
+        return productDTO;
+    }
+
+    private Product productMapperToModel(final NewProductDTO newProductDTO) {
+        return Product.builder()
+                .name(newProductDTO.getName())
+                .description(newProductDTO.getDescription())
+                .categories(newProductDTO.getCategoriesId().stream().map(catId -> categoryService.findById(catId).orElse(null)).toList())
+                .platforms(newProductDTO.getPlatformsId().stream().map(platId -> platformService.findById(platId).orElse(null)).toList())
+                .price(newProductDTO.getPrice())
+                .build();
+    }
+
+    private void validations(List<Long> categoriesId, List<Long> platformsId){
+        for (int i= 0; i<categoriesId.size(); i++) {
+            if (categoryService.findById(categoriesId.get(i)).isEmpty()) {
+                throw new CategoryNotFoundException("No se ha encontrado la categoria de Id " + categoriesId.get(i));
+            }
+        }
+
+        for (int i= 0; i<platformsId.size(); i++) {
+            if (platformService.findById(platformsId.get(i)).isEmpty()) {
+                throw new PlatformNotFoundException("No se ha encontrado la plataforma de Id " + platformsId.get(i));
+            }
+        }
     }
 }

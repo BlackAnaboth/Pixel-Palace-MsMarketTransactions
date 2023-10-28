@@ -26,7 +26,7 @@ public class Category {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     @JoinTable(
             name = "ProductCategories",
             joinColumns = @JoinColumn(name = "category_id"),

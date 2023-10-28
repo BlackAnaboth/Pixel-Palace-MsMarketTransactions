@@ -8,10 +8,23 @@
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msMarketTransactions/pom.xml" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/pom.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/ProductController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/ProductController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/ProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/exception/NoSuchCategoryException.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/exception/CategoryNotFoundException.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Platform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/ICategoryRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/ICategoryRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/IPlatformRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/IPlatformRepository.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/IProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/IProductRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ICategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ICategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/IPlatformService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/IPlatformService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/IProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/IProductService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/CategoryService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/CategoryService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/PlatformService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/PlatformService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/application-local.yml" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/application-local.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/application.properties" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/carga_sql/script.sql" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -69,6 +82,9 @@
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
   </component>
   <component name="RecentsManager">
+    <key name="MoveFile.RECENT_KEYS">
+      <recent name="C:\Orne\Certified Tech Developer\Proyecto Integrador 2\Pixel-Palace-MsMarketTransactions\msMarketTransactions\src\main\resources\carga_sql" />
+    </key>
     <key name="MoveClassesOrPackagesDialog.RECENTS_KEY">
       <recent name="com.pixelpalace.msMarketTransactions" />
       <recent name="com.pixelpalace.msMarketTransactions.repository" />
@@ -105,5 +121,171 @@
       </map>
     </option>
     <option name="oldMeFiltersMigrated" value="true" />
+  </component>
+  <component name="XDebuggerManager">
+    <breakpoint-manager>
+      <breakpoints>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>41</line>
+          <option name="timeStamp" value="1" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>122</line>
+          <option name="timeStamp" value="2" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>123</line>
+          <option name="timeStamp" value="4" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>131</line>
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>43</line>
+          <option name="timeStamp" value="11" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/ProductController.java</url>
+          <line>35</line>
+          <option name="timeStamp" value="12" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/ProductController.java</url>
+          <line>38</line>
+          <option name="timeStamp" value="13" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>96</line>
+          <option name="timeStamp" value="14" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>118</line>
+          <option name="timeStamp" value="18" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/ProductController.java</url>
+          <line>58</line>
+          <option name="timeStamp" value="19" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>135</line>
+          <option name="timeStamp" value="21" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>137</line>
+          <option name="timeStamp" value="22" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>136</line>
+          <option name="timeStamp" value="23" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>138</line>
+          <option name="timeStamp" value="24" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>81</line>
+          <option name="timeStamp" value="26" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>82</line>
+          <option name="timeStamp" value="27" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>84</line>
+          <option name="timeStamp" value="29" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>85</line>
+          <option name="timeStamp" value="31" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>86</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="32" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>87</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="33" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>145</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="34" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>146</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="35" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>142</line>
+          <option name="timeStamp" value="37" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>99</line>
+          <option name="timeStamp" value="38" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>102</line>
+          <option name="timeStamp" value="39" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>106</line>
+          <option name="timeStamp" value="40" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>110</line>
+          <option name="timeStamp" value="41" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java</url>
+          <line>111</line>
+          <option name="timeStamp" value="42" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-method">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/IProductService.java</url>
+          <line>20</line>
+          <properties class="com.pixelpalace.msMarketTransactions.service.IProductService" method="createProduct">
+            <option name="EMULATED" value="true" />
+          </properties>
+          <option name="timeStamp" value="25" />
+        </line-breakpoint>
+      </breakpoints>
+    </breakpoint-manager>
   </component>
 </project>

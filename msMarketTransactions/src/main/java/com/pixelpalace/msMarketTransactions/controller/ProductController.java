@@ -2,8 +2,12 @@ package com.pixelpalace.msMarketTransactions.controller;
 
 import com.pixelpalace.msMarketTransactions.dto.ProductDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductListDTO;
+import com.pixelpalace.msMarketTransactions.dto.request.NewProductDTO;
+import com.pixelpalace.msMarketTransactions.dto.request.ProductRequestDTO;
+import com.pixelpalace.msMarketTransactions.model.Product;
 import com.pixelpalace.msMarketTransactions.service.IProductService;
 import com.pixelpalace.msMarketTransactions.util.CategoryTypeEnum;
+import jakarta.validation.Valid;
 import org.springframework.http.HttpStatus;
 import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
@@ -32,16 +36,26 @@ public class ProductController {
             response = productService.getProducts();
         }
 
-        return new ResponseEntity<>(response, HttpStatus.OK);
+        return ResponseEntity.status(HttpStatus.OK).body(response);
     }
 
-    @GetMapping("/games/{id}")
+    @GetMapping("/game/{id}")
     public ResponseEntity<ProductDTO> getProductById(@PathVariable Long id){
         return new ResponseEntity<ProductDTO>(productService.getProductById(id), HttpStatus.OK);
     }
 
     @GetMapping("/games/{name}")
-    public ResponseEntity<ProductListDTO> getProductByName(@PathVariable String keyword){
-        return new ResponseEntity<>(productService.getProductByName(keyword), HttpStatus.OK);
+    public ResponseEntity<ProductListDTO> getProductByName(@PathVariable String name){
+        return new ResponseEntity<>(productService.getProductByName(name), HttpStatus.OK);
+    }
+
+    @PostMapping("/game/new")
+    public ResponseEntity<ProductDTO> createProduct(@RequestBody @Valid NewProductDTO newProductDTO){
+        return new ResponseEntity<>(productService.createProduct(newProductDTO), HttpStatus.OK);
+    }
+
+    @PostMapping("/game/update")
+    public ResponseEntity<ProductDTO> updateProduct(@RequestBody @Valid ProductRequestDTO productDTO){
+        return new ResponseEntity<>(productService.updateProduct(productDTO), HttpStatus.OK);
     }
 }

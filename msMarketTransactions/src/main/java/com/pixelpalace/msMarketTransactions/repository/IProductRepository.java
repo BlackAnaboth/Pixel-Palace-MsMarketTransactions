@@ -17,10 +17,12 @@ public interface IProductRepository extends JpaRepository<Product, Long> {
     @Query("SELECT p FROM Product p WHERE p.name LIKE %:keyword%")
     List<Product> findByNameContaining(@Param("keyword") String keyword);
 
-    Optional<Product> findByName(String name);
+    Optional<Product> findByNameIgnoreCase(String name);
 
     List<Product> findAll();
 
     @Query("SELECT p FROM Product p JOIN p.categories c WHERE c.name = :categoryName")
     List<Product> findByCategoryName(@Param("categoryName") String categoryName);
+
+    Product save(Product product);
 }
