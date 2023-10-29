@@ -1,5 +1,6 @@
 package com.pixelpalace.msMarketTransactions.controller;
 
+import com.pixelpalace.msMarketTransactions.dto.MessageDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductListDTO;
 import com.pixelpalace.msMarketTransactions.dto.request.NewProductDTO;
@@ -54,8 +55,13 @@ public class ProductController {
         return new ResponseEntity<>(productService.createProduct(newProductDTO), HttpStatus.OK);
     }
 
-    @PostMapping("/game/update")
+    @PutMapping("/game/update")
     public ResponseEntity<ProductDTO> updateProduct(@RequestBody @Valid ProductRequestDTO productDTO){
         return new ResponseEntity<>(productService.updateProduct(productDTO), HttpStatus.OK);
+    }
+
+    @DeleteMapping("/game/delete/{id}")
+    public ResponseEntity<MessageDTO> deleteProduct(@PathVariable Long id){
+        return new ResponseEntity<>(productService.deleteProduct(id), HttpStatus.OK);
     }
 }

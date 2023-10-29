@@ -1,5 +1,6 @@
 package com.pixelpalace.msMarketTransactions.service.impl;
 
+import com.pixelpalace.msMarketTransactions.dto.MessageDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductListDTO;
 import com.pixelpalace.msMarketTransactions.dto.request.NewProductDTO;
@@ -117,6 +118,21 @@ public class ProductService implements IProductService {
            throw new ProductNotFoundException("No se encontró el producto de Id " + productDTO.getId());
        }
         return productMapperToDTO(result);
+    }
+
+    @Override
+    public MessageDTO deleteProduct(Long id) {
+        Product result = productRepository.findById(id).orElse(null);
+        if (result != null) {
+            try {
+                productRepository.delete(result);
+            } catch (Exception e) {
+                throw new RuntimeException("No se pudo borrar el juego. Por favor, intente más tarde" + e);
+            }
+        } else {
+            throw new ProductNotFoundException("No se encontró el producto de Id " + id);
+        }
+        return new MessageDTO("Se borró con éxito");
     }
 
     private ProductListDTO createProductList(final List<Product> products) {

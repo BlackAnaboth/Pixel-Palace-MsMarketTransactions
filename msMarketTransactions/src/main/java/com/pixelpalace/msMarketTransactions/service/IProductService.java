@@ -1,5 +1,6 @@
 package com.pixelpalace.msMarketTransactions.service;
 
+import com.pixelpalace.msMarketTransactions.dto.MessageDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductListDTO;
 import com.pixelpalace.msMarketTransactions.dto.request.NewProductDTO;
@@ -21,4 +22,6 @@ public interface IProductService {
     ProductDTO createProduct(NewProductDTO newProductDTO);
 
     ProductDTO updateProduct(ProductRequestDTO productDTO);
+
+    MessageDTO deleteProduct(Long id);
 }
