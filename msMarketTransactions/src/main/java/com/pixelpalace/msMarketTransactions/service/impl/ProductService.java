@@ -20,6 +20,7 @@ import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import java.util.List;
 import java.util.Objects;
+import java.util.stream.Collectors;
 
 @Service
 public class ProductService implements IProductService {
@@ -83,8 +84,8 @@ public class ProductService implements IProductService {
         try {
             Product product = productRepository.save(productMapperToModel(newProductDTO));
             productDTO = productMapperToDTO(product);
-            newProductDTO.getCategoriesId().stream().map(categoriaId -> categoryService.saveProduct(categoriaId, product));
-            newProductDTO.getPlatformsId().stream().map(platformId -> platformService.saveProduct(platformId, product));
+            newProductDTO.getCategoriesId().forEach(categoriaId -> categoryService.saveProduct(categoriaId, product));
+            newProductDTO.getPlatformsId().forEach(platformId -> platformService.saveProduct(platformId, product));
         } catch (Exception e) {
             throw new RuntimeException("No se pudo guardar el juego. Por favor, intente más tarde");
         }
@@ -102,11 +103,11 @@ public class ProductService implements IProductService {
                result.setCategories(productDTO.getCategoriesId().stream()
                        .map(categoryId -> categoryService.findById(categoryId).orElse(null))
                        .filter(Objects::nonNull)
-                       .toList());
+                       .collect(Collectors.toList()));
                result.setPlatforms(productDTO.getPlatformsId().stream()
                        .map(platformId -> platformService.findById(platformId).orElse(null))
                        .filter(Objects::nonNull)
-                       .toList());
+                       .collect(Collectors.toList()));
                result.setPrice(productDTO.getPrice());
                productRepository.save(result);
            } catch (Exception e) {
@@ -133,8 +134,8 @@ public class ProductService implements IProductService {
 
     private ProductDTO productMapperToDTO(final Product product) {
         ProductDTO productDTO = modelMapper.map(product, ProductDTO.class);
-        productDTO.setCategories(product.getCategories().stream().map(Category::getName).toList());
-        productDTO.setPlatforms(product.getPlatforms().stream().map(Platform::getName).toList());
+        productDTO.setCategories(product.getCategories().stream().map(Category::getName).collect(Collectors.toList()));
+        productDTO.setPlatforms(product.getPlatforms().stream().map(Platform::getName).collect(Collectors.toList()));
         return productDTO;
     }
 
@@ -142,8 +143,8 @@ public class ProductService implements IProductService {
         return Product.builder()
                 .name(newProductDTO.getName())
                 .description(newProductDTO.getDescription())
-                .categories(newProductDTO.getCategoriesId().stream().map(catId -> categoryService.findById(catId).orElse(null)).toList())
-                .platforms(newProductDTO.getPlatformsId().stream().map(platId -> platformService.findById(platId).orElse(null)).toList())
+                .categories(newProductDTO.getCategoriesId().stream().map(catId -> categoryService.findById(catId).orElse(null)).collect(Collectors.toList()))
+                .platforms(newProductDTO.getPlatformsId().stream().map(platId -> platformService.findById(platId).orElse(null)).collect(Collectors.toList()))
                 .price(newProductDTO.getPrice())
                 .build();
     }
