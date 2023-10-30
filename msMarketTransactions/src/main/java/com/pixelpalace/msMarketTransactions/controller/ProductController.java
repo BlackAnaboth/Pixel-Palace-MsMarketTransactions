@@ -5,7 +5,6 @@ import com.pixelpalace.msMarketTransactions.dto.ProductDTO;
 import com.pixelpalace.msMarketTransactions.dto.ProductListDTO;
 import com.pixelpalace.msMarketTransactions.dto.request.NewProductDTO;
 import com.pixelpalace.msMarketTransactions.dto.request.ProductRequestDTO;
-import com.pixelpalace.msMarketTransactions.model.Product;
 import com.pixelpalace.msMarketTransactions.service.IProductService;
 import com.pixelpalace.msMarketTransactions.util.CategoryTypeEnum;
 import jakarta.validation.Valid;

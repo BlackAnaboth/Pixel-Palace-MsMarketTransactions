@@ -110,6 +110,7 @@ public class ProductService implements IProductService {
                        .filter(Objects::nonNull)
                        .collect(Collectors.toList()));
                result.setPrice(productDTO.getPrice());
+            //TODO save Product in the platforms and categories if not present
                productRepository.save(result);
            } catch (Exception e) {
                throw new RuntimeException("No se pudo guardar el juego. Por favor, intente más tarde" + e);
