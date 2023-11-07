@@ -34,8 +34,13 @@ public class ProductRequestDTO {
     @NotNull(message = "Ingrese una plataforma valida.")
     private List<Long> platformsId;
 
+    @NotNull(message = "Ingrese una imagen valida.")
+    private List<String> imageUrl;
+
     @Positive(message = "Ingrese un precio valido.")
     @NotNull(message = "Ingrese un precio valido.")
     @Digits(fraction = 2, message = "El precio solo puede tener 2 decimales", integer = 100)
     private Double price;
+
+    private Double stock;
 }

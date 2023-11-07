@@ -83,7 +83,9 @@ public class ProductService implements IProductService {
         ProductDTO productDTO;
         validations(newProductDTO.getCategoriesId(), newProductDTO.getPlatformsId());
         try {
-            Product product = productRepository.save(productMapperToModel(newProductDTO));
+            Product newProduct = productMapperToModel(newProductDTO);
+            newProduct.setScore(0.0);
+            Product product = productRepository.save(newProduct);
             productDTO = productMapperToDTO(product);
             newProductDTO.getCategoriesId().forEach(categoriaId -> categoryService.saveProduct(categoriaId, product));
             newProductDTO.getPlatformsId().forEach(platformId -> platformService.saveProduct(platformId, product));
@@ -110,6 +112,7 @@ public class ProductService implements IProductService {
                        .filter(Objects::nonNull)
                        .collect(Collectors.toList()));
                result.setPrice(productDTO.getPrice());
+               result.setStock(productDTO.getStock());
             //TODO save Product in the platforms and categories if not present
                productRepository.save(result);
            } catch (Exception e) {
@@ -163,6 +166,8 @@ public class ProductService implements IProductService {
                 .categories(newProductDTO.getCategoriesId().stream().map(catId -> categoryService.findById(catId).orElse(null)).collect(Collectors.toList()))
                 .platforms(newProductDTO.getPlatformsId().stream().map(platId -> platformService.findById(platId).orElse(null)).collect(Collectors.toList()))
                 .price(newProductDTO.getPrice())
+                .imageUrl(newProductDTO.getImageUrl())
+                .stock(newProductDTO.getStock())
                 .build();
     }
 
