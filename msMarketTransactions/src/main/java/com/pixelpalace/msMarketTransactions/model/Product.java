@@ -33,6 +33,15 @@ public class Product {
     @Column(name = "price")
     private Double price;
 
+    @Column(name = "score")
+    private Double score;
+
+    @Column(name = "image_url")
+    private List<String> imageUrl;
+
+    @Column(name = "stock")
+    private Double stock;
+
     @OneToMany(mappedBy = "product", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     private List<Transaction> transactions;
 }

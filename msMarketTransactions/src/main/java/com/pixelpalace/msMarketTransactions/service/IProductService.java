@@ -24,4 +24,6 @@ public interface IProductService {
     ProductDTO updateProduct(ProductRequestDTO productDTO);
 
     MessageDTO deleteProduct(Long id);
+
+    ProductListDTO getProductByScore(Double score);
 }
