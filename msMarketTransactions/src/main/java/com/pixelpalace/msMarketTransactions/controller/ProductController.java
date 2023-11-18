@@ -63,4 +63,9 @@ public class ProductController {
     public ResponseEntity<MessageDTO> deleteProduct(@PathVariable Long id){
         return new ResponseEntity<>(productService.deleteProduct(id), HttpStatus.OK);
     }
+
+    @GetMapping("/games/score/{score}")
+    public ResponseEntity<ProductListDTO> getProductByScore(@PathVariable Double score){
+        return new ResponseEntity<>(productService.getProductByScore(score), HttpStatus.OK);
+    }
 }

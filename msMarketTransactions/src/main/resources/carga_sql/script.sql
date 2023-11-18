@@ -1,7 +1,3 @@
-
-
-
-
 INSERT INTO Products (name, description, price)
 VALUES ('Fifa 23', 'Juego de futbol en el año 2023' , 49.99);
 

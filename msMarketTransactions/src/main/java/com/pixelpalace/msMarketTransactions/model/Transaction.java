@@ -6,6 +6,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -37,4 +38,7 @@ public class Transaction {
     @ManyToOne
     @JoinColumn(name = "platform_id", nullable = false)
     private Platform platform;
+
+    @Column(name = "date")
+    private Date date;
 }

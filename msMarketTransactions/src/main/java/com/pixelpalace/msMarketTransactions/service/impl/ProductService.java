@@ -71,10 +71,6 @@ public class ProductService implements IProductService {
     public ProductListDTO getProductByName(String keyword) {
         List<Product> products = productRepository.findByNameContaining(keyword);
 
-        if (products.isEmpty()) {
-            throw new ProductNotFoundException("No se ha encontrado ningún producto");
-        }
-
         return createProductList(products);
     }
 
@@ -137,6 +133,12 @@ public class ProductService implements IProductService {
             throw new ProductNotFoundException("No se encontró el producto de Id " + id);
         }
         return new MessageDTO("Se borró con éxito");
+    }
+
+    public ProductListDTO getProductByScore(final Double score) {
+        List<Product> products = productRepository.findByScore(score);
+
+        return createProductList(products);
     }
 
     private ProductListDTO createProductList(final List<Product> products) {
