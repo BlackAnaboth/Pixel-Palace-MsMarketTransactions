@@ -1,5 +1,6 @@
 package com.pixelpalace.msMarketTransactions.service.impl;
 
+import com.pixelpalace.msMarketTransactions.dto.PlatformListDTO;
 import com.pixelpalace.msMarketTransactions.exception.PlatformNotFoundException;
 import com.pixelpalace.msMarketTransactions.model.Platform;
 import com.pixelpalace.msMarketTransactions.model.Product;
@@ -36,5 +37,10 @@ public class PlatformService implements IPlatformService {
             throw new PlatformNotFoundException("No se ha encontrado la plataforma de Id " + platformId);
         }
         return platform;
+    }
+
+    @Override
+    public PlatformListDTO getPlatforms(){
+        return new PlatformListDTO(platformRepository.getAllPlatformsName());
     }
 }

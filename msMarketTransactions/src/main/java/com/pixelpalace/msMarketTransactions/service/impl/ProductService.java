@@ -109,6 +109,7 @@ public class ProductService implements IProductService {
                        .collect(Collectors.toList()));
                result.setPrice(productDTO.getPrice());
                result.setStock(productDTO.getStock());
+               result.setReleaseDate(productDTO.getReleaseDate());
             //TODO save Product in the platforms and categories if not present
                productRepository.save(result);
            } catch (Exception e) {
@@ -170,6 +171,7 @@ public class ProductService implements IProductService {
                 .price(newProductDTO.getPrice())
                 .imageUrl(newProductDTO.getImageUrl())
                 .stock(newProductDTO.getStock())
+                .releaseDate(newProductDTO.getReleaseDate())
                 .build();
     }
 

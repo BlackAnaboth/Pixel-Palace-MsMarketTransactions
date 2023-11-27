@@ -26,6 +26,6 @@ public interface IProductRepository extends JpaRepository<Product, Long> {
 
     Product save(Product product);
 
-    @Query("SELECT p FROM Product p WHERE p.score >= :score ORDER BY p.score")
+    @Query("SELECT p FROM Product p WHERE p.score >= :score ORDER BY p.score DESC")
     List<Product> findByScore(@Param("score") Double score);
 }

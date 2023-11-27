@@ -1,5 +1,6 @@
 package com.pixelpalace.msMarketTransactions.service;
 
+import com.pixelpalace.msMarketTransactions.dto.CategoryListDTO;
 import com.pixelpalace.msMarketTransactions.model.Category;
 import com.pixelpalace.msMarketTransactions.model.Product;
 import com.pixelpalace.msMarketTransactions.util.CategoryTypeEnum;
@@ -14,4 +15,6 @@ public interface ICategoryService {
    Optional<Category> findById(Long id);
 
    Category saveProduct(Long categoryId, Product product);
+
+   CategoryListDTO getCategories();
 }

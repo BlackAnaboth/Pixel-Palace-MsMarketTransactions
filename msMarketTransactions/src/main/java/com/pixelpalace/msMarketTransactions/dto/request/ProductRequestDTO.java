@@ -9,6 +9,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -42,5 +43,10 @@ public class ProductRequestDTO {
     @Digits(fraction = 2, message = "El precio solo puede tener 2 decimales", integer = 100)
     private Double price;
 
+    @Positive(message = "Ingrese un stock valido.")
+    @NotNull(message = "Ingrese un stock valido.")
     private Double stock;
+
+    @NotNull(message = "Ingrese una fecha valida.")
+    private Date releaseDate;
 }

@@ -1,53 +1,53 @@
 #Para base de datos H2
-#server:
-#  port: 8090
-#spring:
-#  datasource:
-#    driver-class-name: org.h2.Driver
-#    url: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE
-#    username: sa
-#    password:
-#  sql:
-#    init:
-#      data-locations:
-#        - classpath:carga_sql/script.sql
-#      mode: always
-#  h2:
-#    console:
-#      enabled: true
-#      path: /h2-console
-#  jpa:
-#    database-platform: org.hibernate.dialect.H2Dialect
-#    defer-datasource-initialization: true
-#    show-sql: true
-#    properties:
-#      hibernate:
-#        format_sql: true
-
 server:
-  port: 8081
+  port: 8090
 spring:
-  application:
-    name: userManagement-service
-    web:
-      cors:
-        allow-credentials: true
-        allowed-origins: http://localhost:3000
-        allowed-methods: "*"
-        allowed-headers: "*"
   datasource:
-    driver-class-name: com.mysql.cj.jdbc.Driver
-    url: jdbc:mysql://localhost:3306/pixel_palace
-    username: root
-    password: matias2018*
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:test;DB_CLOSE_ON_EXIT=FALSE
+    username: sa
+    password:
+  sql:
+    init:
+      data-locations:
+        - classpath:carga_sql/script.sql
+      mode: always
+  h2:
+    console:
+      enabled: true
+      path: /h2-console
   jpa:
-    database-platform: org.hibernate.dialect.MySQL8Dialect
-    hibernate:
-      ddl-auto: create-drop
+    database-platform: org.hibernate.dialect.H2Dialect
+    defer-datasource-initialization: true
     show-sql: true
-  eureka:
-    client:
-      service-url:
-        defaultZone: http://localhost:8761/eureka
-    instance:
-      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
+    properties:
+      hibernate:
+        format_sql: true
+
+#server:
+#  port: 8081
+#spring:
+#  application:
+#    name: userManagement-service
+#    web:
+#      cors:
+#        allow-credentials: true
+#        allowed-origins: http://localhost:3000
+#        allowed-methods: "*"
+#        allowed-headers: "*"
+#  datasource:
+#    driver-class-name: com.mysql.cj.jdbc.Driver
+#    url: jdbc:mysql://localhost:3306/pixel_palace
+#    username: ${username}
+#    password: ${password}
+#  jpa:
+#    database-platform: org.hibernate.dialect.MySQL8Dialect
+#    hibernate:
+#      ddl-auto: create-drop
+#    show-sql: true
+#  eureka:
+#    client:
+#      service-url:
+#        defaultZone: http://localhost:8761/eureka
+#    instance:
+#      instance-id: ${spring.application.name}:${spring.application.instance_id:${random.value}}
