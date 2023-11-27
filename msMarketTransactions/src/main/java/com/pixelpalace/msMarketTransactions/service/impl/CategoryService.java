@@ -1,5 +1,7 @@
 package com.pixelpalace.msMarketTransactions.service.impl;
 
+import com.pixelpalace.msMarketTransactions.dto.CategoryListDTO;
+import com.pixelpalace.msMarketTransactions.dto.PlatformListDTO;
 import com.pixelpalace.msMarketTransactions.exception.CategoryNotFoundException;
 import com.pixelpalace.msMarketTransactions.model.Category;
 import com.pixelpalace.msMarketTransactions.model.Product;
@@ -42,5 +44,10 @@ public class CategoryService implements ICategoryService {
         throw new CategoryNotFoundException("No se ha encontrado la categoria de Id " + categoryId);
     }
         return category;
+    }
+
+    @Override
+    public CategoryListDTO getCategories(){
+        return new CategoryListDTO(categoryRepository.getAllCategoryNames());
     }
 }

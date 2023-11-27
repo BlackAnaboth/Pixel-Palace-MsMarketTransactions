@@ -3,6 +3,7 @@ package com.pixelpalace.msMarketTransactions.model;
 import jakarta.persistence.*;
 import lombok.*;
 
+import java.util.Date;
 import java.util.List;
 
 @Getter
@@ -41,6 +42,9 @@ public class Product {
 
     @Column(name = "stock")
     private Double stock;
+
+    @Column(name = "release_date")
+    private Date releaseDate;
 
     @OneToMany(mappedBy = "product", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     private List<Transaction> transactions;

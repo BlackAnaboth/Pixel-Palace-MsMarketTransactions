@@ -38,8 +38,8 @@ spring:
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/pixel_palace
-    username: root
-    password: matias2018*
+    username: ${username}
+    password: ${password}
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:

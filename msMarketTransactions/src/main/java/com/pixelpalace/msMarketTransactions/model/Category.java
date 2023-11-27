@@ -24,6 +24,12 @@ public class Category {
     @Column(name = "description")
     private String description;
 
+    @Column(name = "view_box")
+    private String viewBox;
+
+    @Column(name = "icon", length = 25000)
+    private String icon;
+
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     @JoinTable(
             name = "ProductCategories",
