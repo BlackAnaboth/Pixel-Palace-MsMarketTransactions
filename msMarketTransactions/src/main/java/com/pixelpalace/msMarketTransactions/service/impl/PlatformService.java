@@ -1,23 +1,28 @@
 package com.pixelpalace.msMarketTransactions.service.impl;
 
+import com.pixelpalace.msMarketTransactions.dto.PlatformDTO;
 import com.pixelpalace.msMarketTransactions.dto.PlatformListDTO;
 import com.pixelpalace.msMarketTransactions.exception.PlatformNotFoundException;
 import com.pixelpalace.msMarketTransactions.model.Platform;
 import com.pixelpalace.msMarketTransactions.model.Product;
 import com.pixelpalace.msMarketTransactions.repository.IPlatformRepository;
 import com.pixelpalace.msMarketTransactions.service.IPlatformService;
+import org.modelmapper.ModelMapper;
 import org.springframework.stereotype.Service;
 import java.util.ArrayList;
 import java.util.List;
 import java.util.Optional;
+import java.util.stream.Collectors;
 
 @Service
 public class PlatformService implements IPlatformService {
 
     private final IPlatformRepository platformRepository;
+    private ModelMapper modelMapper;
 
     public PlatformService(IPlatformRepository platformRepository) {
         this.platformRepository = platformRepository;
+        this.modelMapper = new ModelMapper();
     }
 
     @Override
@@ -41,6 +46,8 @@ public class PlatformService implements IPlatformService {
 
     @Override
     public PlatformListDTO getPlatforms(){
-        return new PlatformListDTO(platformRepository.getAllPlatformsName());
+        List<Platform> platforms = platformRepository.getAllPlatforms();
+        List<PlatformDTO> platformDTOS = platforms.stream().map(platform -> modelMapper.map(platform, PlatformDTO.class)).collect(Collectors.toList());
+        return new PlatformListDTO(platformDTOS);
     }
 }

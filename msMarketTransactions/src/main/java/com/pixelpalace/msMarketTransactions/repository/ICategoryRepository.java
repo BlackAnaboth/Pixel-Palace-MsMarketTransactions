@@ -14,6 +14,6 @@ public interface ICategoryRepository extends JpaRepository<Category, Long> {
     Optional<Category> findByName(String category);
     Optional<Category> findById(Long id);
 
-    @Query("SELECT name FROM Category")
-    List<String> getAllCategoryNames();
+    @Query("SELECT c FROM Category c")
+    List<Category> getAllCategories();
 }

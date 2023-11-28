@@ -13,6 +13,6 @@ public interface IPlatformRepository extends JpaRepository<Platform, Long> {
 
     Optional<Platform> findById(Long id);
 
-    @Query("SELECT name FROM Platform")
-    List<String> getAllPlatformsName();
+    @Query("SELECT p FROM Platform p")
+    List<Platform> getAllPlatforms();
 }

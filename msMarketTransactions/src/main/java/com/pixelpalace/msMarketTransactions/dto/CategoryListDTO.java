@@ -14,5 +14,5 @@ import java.util.List;
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
 public class CategoryListDTO {
-    List<String> categories;
+    List<CategoryDTO> categories;
 }
