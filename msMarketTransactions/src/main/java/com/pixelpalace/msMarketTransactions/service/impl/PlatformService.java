@@ -46,7 +46,7 @@ public class PlatformService implements IPlatformService {
 
     @Override
     public PlatformListDTO getPlatforms(){
-        List<Platform> platforms = platformRepository.getAllPlatformsName();
+        List<Platform> platforms = platformRepository.getAllPlatforms();
         List<PlatformDTO> platformDTOS = platforms.stream().map(platform -> modelMapper.map(platform, PlatformDTO.class)).collect(Collectors.toList());
         return new PlatformListDTO(platformDTOS);
     }

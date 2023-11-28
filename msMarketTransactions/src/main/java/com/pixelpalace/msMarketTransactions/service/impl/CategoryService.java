@@ -52,7 +52,7 @@ public class CategoryService implements ICategoryService {
 
     @Override
     public CategoryListDTO getCategories(){
-        List<Category> categories = categoryRepository.getAllCategoryNames();
+        List<Category> categories = categoryRepository.getAllCategories();
         List<CategoryDTO> categoryDTOS = categories.stream().map(category -> modelMapper.map(category, CategoryDTO.class)).collect(Collectors.toList());
         return new CategoryListDTO(categoryDTOS);
     }

@@ -24,8 +24,8 @@ public class Category {
     @Column(name = "description")
     private String description;
 
-    @Column(name = "view_box")
-    private String viewBox;
+    @Column(name = "viewbox")
+    private String viewbox;
 
     @Column(name = "icon", length = 25000)
     private String icon;
