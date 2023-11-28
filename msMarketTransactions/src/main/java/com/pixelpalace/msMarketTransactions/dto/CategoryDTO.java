@@ -7,13 +7,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.List;
-
-@Getter @Setter
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class PlatformListDTO {
-    List<PlatformDTO> platforms;
-}
+public class CategoryDTO {
 
+    private Long id;
+    private String name;
+    private String description;
+    private String viewBox;
+    private String icon;
+}
