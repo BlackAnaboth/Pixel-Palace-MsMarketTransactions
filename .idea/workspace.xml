@@ -5,9 +5,11 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65010df5-e0e9-42db-8b3c-5477baa60764" name="Changes" comment="">
-      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/ProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/ProductDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/application.yml" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/request/NewProductDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/request/NewProductDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/request/ProductRequestDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/request/ProductRequestDTO.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Category.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Category.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />

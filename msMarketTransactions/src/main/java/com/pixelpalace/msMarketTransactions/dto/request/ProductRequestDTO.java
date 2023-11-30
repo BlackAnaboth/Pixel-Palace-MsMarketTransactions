@@ -2,14 +2,12 @@ package com.pixelpalace.msMarketTransactions.dto.request;
 
 import com.fasterxml.jackson.databind.PropertyNamingStrategy;
 import com.fasterxml.jackson.databind.annotation.JsonNaming;
-import com.pixelpalace.msMarketTransactions.model.Category;
-import com.pixelpalace.msMarketTransactions.model.Platform;
 import jakarta.validation.constraints.Digits;
 import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Getter
@@ -48,5 +46,5 @@ public class ProductRequestDTO {
     private Double stock;
 
     @NotNull(message = "Ingrese una fecha valida.")
-    private Date releaseDate;
+    private Timestamp releaseDate;
 }

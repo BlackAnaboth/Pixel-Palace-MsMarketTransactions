@@ -7,7 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Getter @Setter
@@ -25,5 +25,5 @@ public class ProductDTO {
     private Double score;
     private List<String> imageUrl;
     private Double stock;
-    private Date releaseDate;
+    private Timestamp releaseDate;
 }

@@ -1,9 +1,12 @@
 package com.pixelpalace.msMarketTransactions.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.sql.Timestamp;
+import com.pixelpalace.msMarketTransactions.util.StringListConverter;
 import java.util.List;
 
 @Getter
@@ -12,8 +15,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Products")
-public class Product {
+@Table(name = "products")
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -38,13 +41,15 @@ public class Product {
     private Double score;
 
     @Column(name = "image_url")
+    @Convert(converter = StringListConverter.class)
     private List<String> imageUrl;
 
     @Column(name = "stock")
     private Double stock;
 
     @Column(name = "release_date")
-    private Date releaseDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss[.SSS]X")
+    private Timestamp releaseDate;
 
     @OneToMany(mappedBy = "product", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     private List<Transaction> transactions;
