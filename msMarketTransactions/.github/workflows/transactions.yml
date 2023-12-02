@@ -15,8 +15,8 @@ jobs:
 
     - name: Build and push Docker image for msMarketTransactions
       env:
-        DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
-        DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+        DOCKER_USERNAME: secrets.DOCKER_USERNAME
+        DOCKER_PASSWORD: secrets.DOCKER_PASSWORD
       run: |
         docker build -t ms_market_transactions .
         docker tag ms_market_transactions DOCKER_USERNAME/ms_market_transactions:latest
@@ -27,12 +27,12 @@ jobs:
     - name: Connect to EC2 instance and deploy msMarketTransactions
       uses: aws-actions/configure-ec2@v1
       with:
-        host: ${{ secrets.EC2_HOST }}
-        username: ${{ secrets.EC2_USERNAME }}
-        key: ${{ secrets.EC2_SSH_PRIVATE_KEY }}
+        host: secrets.EC2_HOST
+        username: secrets.EC2_USERNAME
+        key: secrets.EC2_SSH_PRIVATE_KEY
 
     - name: SSH into EC2 instance
-      run: ssh -i ${{ secrets.EC2_SSH_PRIVATE_KEY }} ${{ secrets.EC2_USERNAME }}@${{ secrets.EC2_HOST }}
+      run: ssh -i secrets.EC2_SSH_PRIVATE_KEY secrets.EC2_USERNAME@secrets.EC2_HOST
 
     - name: Deploy Docker image
       run: docker run -d --name msMarketTransactions -p 8080:8090
