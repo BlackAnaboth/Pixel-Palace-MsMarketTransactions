@@ -7,7 +7,7 @@ import jakarta.validation.constraints.NotNull;
 import jakarta.validation.constraints.Positive;
 import lombok.*;
 
-import java.util.Date;
+import java.sql.Timestamp;
 import java.util.List;
 
 @Getter @Setter
@@ -42,5 +42,5 @@ public class NewProductDTO {
     private Double stock;
 
     @NotNull(message = "Ingrese una fecha valida.")
-    private Date releaseDate;
+    private Timestamp releaseDate;
 }

@@ -11,7 +11,7 @@ import java.util.List;
 @NoArgsConstructor
 @Builder
 @Entity
-@Table(name = "Categories")
+@Table(name = "categories")
 public class Category {
 
     @Id
@@ -32,7 +32,7 @@ public class Category {
 
     @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
     @JoinTable(
-            name = "ProductCategories",
+            name = "product_categories",
             joinColumns = @JoinColumn(name = "category_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id" ))
     private List<Product> products;
