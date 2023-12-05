@@ -5,36 +5,14 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65010df5-e0e9-42db-8b3c-5477baa60764" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/PixelUserController.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/LoginDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/PixelUserDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/TransactionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/TransactionListDto.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/request/NewTransactionDTO.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/response/LoginResponse.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/PixelUser.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/PixelUserRepository.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/PixelUserService.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/PixelUserServiceImpl.java" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/util/Rol.java" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/config/ControllerExceptionHandler.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/config/ControllerExceptionHandler.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/TransactionController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Platform.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Transaction.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/ITransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/ITransactionRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/TopSoldProductRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/TopSoldProductRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ITransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ITransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/ProductService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/TransactionService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/application.yml" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/application.yml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/carga_sql/script.sql" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/resources/carga_sql/script.sql" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/TopRatedReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/TopRatedReportController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/TopRatedReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/TopRatedReportRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ITopRatedReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ITopRatedReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/TopRatedReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/TopRatedReportService.java" afterDir="false" />
     </list>
-    <list id="0dfc86e7-e77f-4760-acf8-74d5d1699800" name="Changes by Luciano" comment="">
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" afterDir="false" />
-    </list>
+    <list id="0dfc86e7-e77f-4760-acf8-74d5d1699800" name="Changes by Luciano" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -82,25 +60,25 @@
       </map>
     </option>
   </component>
-  <component name="LineStatusTrackerManager">
-    <file path="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java">
-      <ranges>
-        <range start1="9" end1="9" start2="9" end2="11" changelist="0dfc86e7-e77f-4760-acf8-74d5d1699800" />
-        <range start1="31" end1="32" start2="33" end2="34" changelist="0dfc86e7-e77f-4760-acf8-74d5d1699800" />
-        <range start1="34" end1="35" start2="36" end2="37" changelist="0dfc86e7-e77f-4760-acf8-74d5d1699800" />
-        <range start1="44" end1="45" start2="46" end2="47" changelist="0dfc86e7-e77f-4760-acf8-74d5d1699800" />
-        <range start1="53" end1="55" start2="55" end2="64" changelist="65010df5-e0e9-42db-8b3c-5477baa60764" />
-      </ranges>
-    </file>
-  </component>
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
+  <component name="ProjectColorInfo"><![CDATA[{
+  "associatedIndex": 4
+}]]></component>
   <component name="ProjectId" id="2X2cNpsBkFelwPFEahyjse8G2yO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
+  <component name="PropertiesComponent"><![CDATA[{
+  "keyToString": {
+    "RunOnceActivity.OpenProjectViewOnStart": "true",
+    "RunOnceActivity.ShowReadmeOnStart": "true",
+    "git-widget-placeholder": "hotfix/toprated-dates",
+    "last_opened_file_path": "/home/andrea/Documentos/PI/Pixel-Palace-MsMarketTransactions"
+  }
+}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\alexi\OneDrive\Escritorio\Curso DH\DH\Especializacio\PI\micro\PRUEBA2\Pixel-Palace-MsMarketTransactions\msMarketTransactions\src\main\java\com\pixelpalace\msMarketTransactions\dto" />
@@ -249,7 +227,6 @@
         </entry>
       </map>
     </option>
-    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
