@@ -12,6 +12,7 @@ import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import java.time.LocalDate;
+import java.time.format.DateTimeFormatter;
 import java.util.List;
 
 @RestController
@@ -23,11 +24,18 @@ public class TopRatedReportController {
 
     @GetMapping("/top-rated-products")
     public ResponseEntity<List<TopRatedReportDTO>> getTopRatedProducts(
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate startDate,
-            @RequestParam @DateTimeFormat(iso = DateTimeFormat.ISO.DATE) LocalDate endDate) {
+            @RequestParam @DateTimeFormat(pattern = "MM-yyyy") String startMonthYear,
+            @RequestParam @DateTimeFormat(pattern = "MM-yyyy") String endMonthYear) {
+
+        LocalDate startDate = parseToLocalDate(startMonthYear);
+        LocalDate endDate = parseToLocalDate(endMonthYear);
 
         List<TopRatedReportDTO> topRatedProducts = topRatedReportService.generateTopRatedReports(startDate, endDate);
         return new ResponseEntity<>(topRatedProducts, HttpStatus.OK);
+    }
+
+    private LocalDate parseToLocalDate(String date) {
+        return LocalDate.parse(date + "-01", DateTimeFormatter.ofPattern("MM-yyyy-dd"));
     }
 }
 
