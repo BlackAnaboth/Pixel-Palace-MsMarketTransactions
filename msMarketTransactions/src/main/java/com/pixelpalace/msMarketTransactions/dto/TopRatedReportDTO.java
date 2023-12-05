@@ -7,6 +7,7 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
+import java.time.LocalDate;
 import java.util.List;
 @Getter
 @Setter
@@ -17,4 +18,5 @@ public class TopRatedReportDTO {
     private String name;
     private Double stock;
     private List<String> categories;
+    private List<String> platforms;
 }

@@ -24,13 +24,14 @@ public class TopRatedReportController {
 
     @GetMapping("/top-rated-products")
     public ResponseEntity<List<TopRatedReportDTO>> getTopRatedProducts(
-            @RequestParam @DateTimeFormat(pattern = "MM-yyyy") String startMonthYear,
-            @RequestParam @DateTimeFormat(pattern = "MM-yyyy") String endMonthYear) {
+            @RequestParam(required = false) @DateTimeFormat(pattern = "MM-yyyy") LocalDate startDate,
+            @RequestParam(required = false) @DateTimeFormat(pattern = "MM-yyyy") LocalDate endDate,
+            @RequestParam(required = false) List<String> categories,
+            @RequestParam(required = false) List<String> platforms) {
 
-        LocalDate startDate = parseToLocalDate(startMonthYear);
-        LocalDate endDate = parseToLocalDate(endMonthYear);
+        List<TopRatedReportDTO> topRatedProducts = topRatedReportService.generateTopRatedReports(
+                startDate, endDate, categories, platforms);
 
-        List<TopRatedReportDTO> topRatedProducts = topRatedReportService.generateTopRatedReports(startDate, endDate);
         return new ResponseEntity<>(topRatedProducts, HttpStatus.OK);
     }
 
@@ -38,4 +39,3 @@ public class TopRatedReportController {
         return LocalDate.parse(date + "-01", DateTimeFormatter.ofPattern("MM-yyyy-dd"));
     }
 }
-

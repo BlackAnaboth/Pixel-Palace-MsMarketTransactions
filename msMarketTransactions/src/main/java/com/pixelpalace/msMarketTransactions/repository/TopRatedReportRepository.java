@@ -13,9 +13,16 @@ import java.util.List;
 @Repository
 public interface TopRatedReportRepository extends JpaRepository<Product, Long> {
 
-    @Query("SELECT p FROM Product p WHERE p.releaseDate BETWEEN :startDate AND :endDate ORDER BY p.score DESC")
-    List<Product> findTopRatedProductsBetweenDates(
-            @Param("startDate") YearMonth startDate,
-            @Param("endDate") YearMonth endDate);
+    @Query("SELECT p FROM Product p " +
+            "WHERE (:startDate IS NULL OR p.releaseDate BETWEEN :startDate AND :endDate) " +
+            "AND (:endDate IS NULL OR p.releaseDate <= :endDate) " +
+            "AND (:categories IS NULL OR EXISTS (SELECT c FROM p.categories c WHERE c.name IN :categories)) " +
+            "AND (:platforms IS NULL OR EXISTS (SELECT pl FROM p.platforms pl WHERE pl.name IN :platforms)) " +
+            "ORDER BY p.score DESC")
+    List<Product> findTopRatedProductsBetweenDatesAndFilters(
+            @Param("startDate") LocalDate startDate,
+            @Param("endDate") LocalDate endDate,
+            @Param("categories") List<String> categories,
+            @Param("platforms") List<String> platforms);
 }
 
