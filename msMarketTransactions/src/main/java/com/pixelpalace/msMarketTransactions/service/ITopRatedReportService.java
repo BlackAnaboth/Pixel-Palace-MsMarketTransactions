@@ -9,6 +9,10 @@ import java.util.List;
 
 public interface ITopRatedReportService {
     List<TopRatedReportDTO> generateTopRatedReports(
+            LocalDate startDate, LocalDate endDate,
+            List<String> categories, List<String> platforms);
+
+    List<TopRatedReportDTO> generateTopRatedReports(
             @RequestParam @DateTimeFormat(pattern = "MM-yyyy") String startMonthYear,
             @RequestParam @DateTimeFormat(pattern = "MM-yyyy") String endMonthYear);
 
