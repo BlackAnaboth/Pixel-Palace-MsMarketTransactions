@@ -12,7 +12,7 @@ public interface TopSoldProductRepository extends JpaRepository<TopSoldProduct, 
     @Query(nativeQuery = true,
             value = "SELECT tp.product_id AS productId, COUNT(tp.product_id) AS totalSales " +
                     "FROM transactions_product tp " +
-                    "JOIN transactions t ON tp.transacction_id = t.transacction_id " +
+                    "JOIN transactions t ON tp.transaction_id = t.transaction_id " +
                     "WHERE t.date >= :startDate " +
                     "GROUP BY tp.product_id " +
                     "ORDER BY totalSales DESC " +

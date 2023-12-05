@@ -7,6 +7,8 @@ import lombok.*;
 import java.io.Serializable;
 import java.sql.Timestamp;
 import com.pixelpalace.msMarketTransactions.util.StringListConverter;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -29,10 +31,10 @@ public class Product implements Serializable {
     private String description;
 
     @ManyToMany(mappedBy = "products", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
-    private List<Category> categories;
+    private List<Category> categories = new ArrayList<>();
 
     @ManyToMany(mappedBy = "products", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
-    private List<Platform> platforms;
+    private List<Platform> platforms = new ArrayList<>();
 
     @Column(name = "price")
     private Double price;
@@ -42,7 +44,7 @@ public class Product implements Serializable {
 
     @Column(name = "image_url")
     @Convert(converter = StringListConverter.class)
-    private List<String> imageUrl;
+    private List<String> imageUrl = new ArrayList<>();
 
     @Column(name = "stock")
     private Double stock;
@@ -51,6 +53,13 @@ public class Product implements Serializable {
     @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss[.SSS]X")
     private Timestamp releaseDate;
 
-    @OneToMany(mappedBy = "product", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
-    private List<Transaction> transactions;
+    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "transactions_product",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "transaction_id"))
+    private List<Transaction> transactions = new ArrayList<>();
+    public Product(Long Id) {
+        this.id = Id;
+    }
 }
