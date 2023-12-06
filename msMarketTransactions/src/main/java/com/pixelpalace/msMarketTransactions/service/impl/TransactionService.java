@@ -3,6 +3,7 @@ package com.pixelpalace.msMarketTransactions.service.impl;
 import com.pixelpalace.msMarketTransactions.dto.*;
 import com.pixelpalace.msMarketTransactions.dto.request.NewTransactionDTO;
 import com.pixelpalace.msMarketTransactions.dto.response.PixelUserGetOneDTO;
+import com.pixelpalace.msMarketTransactions.dto.response.ProductResponseDTO;
 import com.pixelpalace.msMarketTransactions.exception.PlatformNotFoundException;
 import com.pixelpalace.msMarketTransactions.exception.ProductNotFoundException;
 import com.pixelpalace.msMarketTransactions.exception.UserNotFoundException;
@@ -157,7 +158,7 @@ public class TransactionService implements ITransactionService {
 
     private TransactionDTO transactionMapperToDTO(final Transaction transaction) {
         TransactionDTO transactionDTO = modelMapper.map(transaction, TransactionDTO.class);
-        transactionDTO.setProducts(transaction.getProducts().stream().map(Product::getName).collect(Collectors.toList()));
+        transactionDTO.setProducts(transaction.getProducts().stream().map(prod -> modelMapper.map(prod, ProductResponseDTO.class)).collect(Collectors.toList()));
         transactionDTO.setPlatforms(transaction.getPlatform().stream().map(Platform::getName).collect(Collectors.toList()));
         PixelUser pixelUserDTO = modelMapper.map(transaction.getIduser(), PixelUser.class);
         transactionDTO.setUserId(pixelUserDTO.getId());
