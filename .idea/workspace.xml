@@ -5,14 +5,17 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="65010df5-e0e9-42db-8b3c-5477baa60764" name="Changes" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/TopRatedReportController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/TopRatedReportController.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/TopRatedReportDTO.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/TopRatedReportDTO.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/TopRatedReportRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/TopRatedReportRepository.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ITopRatedReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ITopRatedReportService.java" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/TopRatedReportService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/TopRatedReportService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/TransactionController.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/TransactionController.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/PixelUser.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/PixelUser.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Platform.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Platform.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Product.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Transaction.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/model/Transaction.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/ITransactionRepository.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/repository/ITransactionRepository.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ITransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/ITransactionService.java" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/TransactionService.java" beforeDir="false" afterPath="$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/TransactionService.java" afterDir="false" />
     </list>
-    <list id="0dfc86e7-e77f-4760-acf8-74d5d1699800" name="Changes by Luciano" comment="" />
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
     <option name="HIGHLIGHT_NON_ACTIVE_CHANGELIST" value="false" />
@@ -63,25 +66,11 @@
   <component name="MarkdownSettingsMigration">
     <option name="stateVersion" value="1" />
   </component>
-  <component name="ProjectColorInfo">{
-  &quot;associatedIndex&quot;: 4
-}</component>
   <component name="ProjectId" id="2X2cNpsBkFelwPFEahyjse8G2yO" />
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
   </component>
-  <component name="PropertiesComponent"><![CDATA[{
-  "keyToString": {
-    "RunOnceActivity.OpenProjectViewOnStart": "true",
-    "RunOnceActivity.ShowReadmeOnStart": "true",
-    "git-widget-placeholder": "hotfix/topRated-response",
-    "last_opened_file_path": "/home/andrea/Documentos/PI/Pixel-Palace-MsMarketTransactions",
-    "project.structure.last.edited": "Modules",
-    "project.structure.proportion": "0.0",
-    "project.structure.side.proportion": "0.0"
-  }
-}]]></component>
   <component name="RecentsManager">
     <key name="CopyFile.RECENT_KEYS">
       <recent name="C:\Users\alexi\OneDrive\Escritorio\Curso DH\DH\Especializacio\PI\micro\PRUEBA2\Pixel-Palace-MsMarketTransactions\msMarketTransactions\src\main\java\com\pixelpalace\msMarketTransactions\dto" />
@@ -230,6 +219,7 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
@@ -274,6 +264,19 @@
           <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/dto/PlatformListDTO.java</url>
           <line>14</line>
           <option name="timeStamp" value="43" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/service/impl/TransactionService.java</url>
+          <line>76</line>
+          <properties>
+            <option name="lambda-ordinal" value="-1" />
+          </properties>
+          <option name="timeStamp" value="48" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="java-line">
+          <url>file://$PROJECT_DIR$/msMarketTransactions/src/main/java/com/pixelpalace/msMarketTransactions/controller/TransactionController.java</url>
+          <line>26</line>
+          <option name="timeStamp" value="50" />
         </line-breakpoint>
       </breakpoints>
     </breakpoint-manager>

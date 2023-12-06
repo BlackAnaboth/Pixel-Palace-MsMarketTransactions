@@ -28,14 +28,14 @@ public class Transaction {
     @Column(name = "code")
     private String code;
 
-    @ManyToOne(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinColumn(name = "transaction_id")
     private PixelUser iduser;
 
-    @ManyToMany(mappedBy = "transactions", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "transactions", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Product> products = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "transactions", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
+    @ManyToMany(mappedBy = "transactions", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Platform> platform = new ArrayList<>();
 
     @Column(name = "date")
