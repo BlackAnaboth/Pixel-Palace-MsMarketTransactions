@@ -10,12 +10,13 @@ import java.util.List;
 
 public interface TopSoldProductRepository extends JpaRepository<TopSoldProduct, Long> {
     @Query(nativeQuery = true,
-            value = "SELECT tp.product_id AS productId, COUNT(tp.product_id) AS totalSales " +
+            value = "SELECT tp.productId AS productId, COUNT(tp.productId) AS totalSales " +
                     "FROM transactions_product tp " +
-                    "JOIN transactions t ON tp.transaction_id = t.transaction_id " +
+                    "JOIN transactions t ON tp.transactionId = t.id " +
                     "WHERE t.date >= :startDate " +
-                    "GROUP BY tp.product_id " +
+                    "GROUP BY tp.productId " +
                     "ORDER BY totalSales DESC " +
-                    "LIMIT :3")
+                    "LIMIT 3"
+    )
     List<TopSoldProduct> findTopSoldProducts(@Param("startDate") LocalDate startDate);
 }
