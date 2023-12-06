@@ -41,6 +41,9 @@ public class TransactionController {
         return new ResponseEntity<TransactionDTO>(transactionService.getTransactionById(id), HttpStatus.OK);
     }
 
-
+    @GetMapping("/user/{id}")
+    public ResponseEntity<TransactionListDto> getTransactiontByUserId(@PathVariable Long id){
+        return new ResponseEntity<TransactionListDto>(transactionService.getTransactionByUserId(id), HttpStatus.OK);
+    }
 }
 
