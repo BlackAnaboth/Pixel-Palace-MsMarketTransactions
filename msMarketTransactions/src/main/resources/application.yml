@@ -32,14 +32,14 @@ spring:
     web:
       cors:
         allow-credentials: true
-        allowed-origins: http://localhost:3000
+        allowed-origins: "*"
         allowed-methods: "*"
         allowed-headers: "*"
   datasource:
     driver-class-name: com.mysql.cj.jdbc.Driver
     url: jdbc:mysql://localhost:3306/pixel_palace
-    username: root
-    password: Criss.0811
+    username: ${username}
+    password: ${password}
   jpa:
     database-platform: org.hibernate.dialect.MySQL8Dialect
     hibernate:
