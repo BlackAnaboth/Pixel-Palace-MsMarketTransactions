@@ -35,4 +35,4 @@ jobs:
       run: ssh -i secrets.EC2_SSH_PRIVATE_KEY secrets.EC2_USERNAME@secrets.EC2_HOST
 
     - name: Deploy Docker image
-      run: docker run -d --name ms_Market_Transactions:latest -p 8080:8081
+      run: docker run -d --name ms_Market_Transactions -p 8080:8081
