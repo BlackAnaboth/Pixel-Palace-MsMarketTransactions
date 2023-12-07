@@ -5,8 +5,9 @@ import lombok.AllArgsConstructor;
 import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
+import org.springframework.format.annotation.DateTimeFormat;
 
-import java.util.Date;
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -27,18 +28,20 @@ public class Transaction {
     @Column(name = "code")
     private String code;
 
-    //@ManyToOne
-    //@JoinColumn(name = "user_id", nullable = false)
-    //private User user;
+    @ManyToOne(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinColumn(name = "transaction_id")
+    private PixelUser iduser;
 
-    @ManyToOne
-    @JoinColumn(name = "product_id", nullable = false)
-    private Product product;
+    @ManyToMany(mappedBy = "transactions", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Product> products = new ArrayList<>();
 
-    @ManyToOne
-    @JoinColumn(name = "platform_id", nullable = false)
-    private Platform platform;
+    @ManyToMany(mappedBy = "transactions", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Platform> platform = new ArrayList<>();
 
     @Column(name = "date")
-    private Date date;
+    @DateTimeFormat(pattern = "dd-MM-yyyy")
+    private String date;
+
+    @Column(name = "price")
+    private Double price;
 }

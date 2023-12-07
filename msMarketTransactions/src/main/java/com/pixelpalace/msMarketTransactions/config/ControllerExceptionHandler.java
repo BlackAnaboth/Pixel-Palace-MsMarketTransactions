@@ -2,10 +2,7 @@ package com.pixelpalace.msMarketTransactions.config;
 
 import com.pixelpalace.msMarketTransactions.dto.ErrorDTO;
 import com.pixelpalace.msMarketTransactions.dto.MessageDTO;
-import com.pixelpalace.msMarketTransactions.exception.CategoryNotFoundException;
-import com.pixelpalace.msMarketTransactions.exception.EmptyProductsException;
-import com.pixelpalace.msMarketTransactions.exception.PlatformNotFoundException;
-import com.pixelpalace.msMarketTransactions.exception.ProductNotFoundException;
+import com.pixelpalace.msMarketTransactions.exception.*;
 import jakarta.validation.ConstraintViolation;
 import jakarta.validation.ConstraintViolationException;
 import org.springframework.context.support.DefaultMessageSourceResolvable;
@@ -20,6 +17,11 @@ import java.util.stream.Collectors;
 public class ControllerExceptionHandler {
     @ExceptionHandler(ProductNotFoundException.class)
     public ResponseEntity<?> productNotFoundException(Exception e) {
+        return ResponseEntity.badRequest().body(new MessageDTO(e.getMessage()));
+    }
+
+    @ExceptionHandler(UserNotFoundException.class)
+    public ResponseEntity<?> userNotFoundException(Exception e) {
         return ResponseEntity.badRequest().body(new MessageDTO(e.getMessage()));
     }
 

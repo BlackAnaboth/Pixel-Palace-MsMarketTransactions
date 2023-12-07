@@ -110,6 +110,7 @@ public class ProductService implements IProductService {
                result.setPrice(productDTO.getPrice());
                result.setStock(productDTO.getStock());
                result.setReleaseDate(productDTO.getReleaseDate());
+               result.setImageUrl(productDTO.getImageUrl());
             //TODO save Product in the platforms and categories if not present
                productRepository.save(result);
            } catch (Exception e) {

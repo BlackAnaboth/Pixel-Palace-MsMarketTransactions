@@ -24,13 +24,21 @@ public class Platform {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany(cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     @JoinTable(
             name = "ProductPlatforms",
             joinColumns = @JoinColumn(name = "platform_id"),
             inverseJoinColumns = @JoinColumn(name = "product_id" ))
     private List<Product> products;
 
-    @OneToMany(mappedBy = "platform", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "transactionsPlatforms",
+            joinColumns = @JoinColumn(name = "platform_id"),
+            inverseJoinColumns = @JoinColumn(name = "transaction_id"))
     private List<Transaction> transactions;
+
+    public Platform(long id) {
+        this.id = id;
+    }
 }

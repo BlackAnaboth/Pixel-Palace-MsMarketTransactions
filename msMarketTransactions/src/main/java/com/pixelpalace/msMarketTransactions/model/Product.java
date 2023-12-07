@@ -1,9 +1,14 @@
 package com.pixelpalace.msMarketTransactions.model;
 
+import com.fasterxml.jackson.annotation.JsonFormat;
 import jakarta.persistence.*;
 import lombok.*;
 
-import java.util.Date;
+import java.io.Serializable;
+import java.sql.Timestamp;
+import com.pixelpalace.msMarketTransactions.util.StringListConverter;
+
+import java.util.ArrayList;
 import java.util.List;
 
 @Getter
@@ -12,8 +17,8 @@ import java.util.List;
 @AllArgsConstructor
 @NoArgsConstructor
 @Entity
-@Table(name = "Products")
-public class Product {
+@Table(name = "products")
+public class Product implements Serializable {
 
     @Id
     @GeneratedValue(strategy = GenerationType.IDENTITY)
@@ -25,11 +30,11 @@ public class Product {
     @Column(name = "description")
     private String description;
 
-    @ManyToMany(mappedBy = "products", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
-    private List<Category> categories;
+    @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Category> categories = new ArrayList<>();
 
-    @ManyToMany(mappedBy = "products", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
-    private List<Platform> platforms;
+    @ManyToMany(mappedBy = "products", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    private List<Platform> platforms = new ArrayList<>();
 
     @Column(name = "price")
     private Double price;
@@ -38,14 +43,23 @@ public class Product {
     private Double score;
 
     @Column(name = "image_url")
-    private List<String> imageUrl;
+    @Convert(converter = StringListConverter.class)
+    private List<String> imageUrl = new ArrayList<>();
 
     @Column(name = "stock")
     private Double stock;
 
     @Column(name = "release_date")
-    private Date releaseDate;
+    @JsonFormat(shape = JsonFormat.Shape.STRING, pattern = "yyyy-MM-dd'T'HH:mm:ss[.SSS]X")
+    private Timestamp releaseDate;
 
-    @OneToMany(mappedBy = "product", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
-    private List<Transaction> transactions;
+    @ManyToMany(cascade = CascadeType.ALL, fetch = FetchType.LAZY)
+    @JoinTable(
+            name = "transactions_product",
+            joinColumns = @JoinColumn(name = "product_id"),
+            inverseJoinColumns = @JoinColumn(name = "transaction_id"))
+    private List<Transaction> transactions = new ArrayList<>();
+    public Product(Long Id) {
+        this.id = Id;
+    }
 }

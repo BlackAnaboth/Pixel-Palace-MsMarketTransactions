@@ -32,7 +32,7 @@ spring:
     web:
       cors:
         allow-credentials: true
-        allowed-origins: http://localhost:3000
+        allowed-origins: "*"
         allowed-methods: "*"
         allowed-headers: "*"
   datasource:
