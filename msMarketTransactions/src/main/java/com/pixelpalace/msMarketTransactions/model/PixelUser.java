@@ -55,7 +55,7 @@ public class PixelUser {
     private String existingBirthday;
 
 
-    @OneToMany(mappedBy = "iduser", cascade = {CascadeType.PERSIST, CascadeType.MERGE, CascadeType.REMOVE}, fetch = FetchType.LAZY)
+    @OneToMany(mappedBy = "iduser", cascade = CascadeType.ALL, fetch = FetchType.LAZY)
     private List<Transaction> transactions;
 
 }

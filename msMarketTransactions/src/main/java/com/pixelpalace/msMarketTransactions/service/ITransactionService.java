@@ -11,6 +11,9 @@ public interface ITransactionService {
     TransactionListDto getTransactionListDto();
 
     TransactionDTO getTransactionById(Long Id);
+
     TransactionDTO createTransaction(NewTransactionDTO newTransactionDTO);
+
+    TransactionListDto getTransactionByUserId(Long id);
 
 }
