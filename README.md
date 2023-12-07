@@ -67,7 +67,7 @@ spring.datasource.driver-class-name=com.mysql.cj.jdbc.Driver
 
 ## **Diagrama Relacional**
 
-![der.png](Pixel-Palace-MsMarketTransactions%20cc4a540b676d4cf7be77903e6a8e8c95/der.png)
+![der.png](./der.png)
 
 # Modelos:
 
