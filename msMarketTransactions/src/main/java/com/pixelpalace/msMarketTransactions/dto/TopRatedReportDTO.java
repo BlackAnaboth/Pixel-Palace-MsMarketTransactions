@@ -7,23 +7,16 @@ import lombok.Getter;
 import lombok.NoArgsConstructor;
 import lombok.Setter;
 
-import java.sql.Timestamp;
-import java.util.List;
 
-@Getter @Setter
+import java.util.List;
+@Getter
+@Setter
 @AllArgsConstructor
 @NoArgsConstructor
 @JsonNaming(PropertyNamingStrategy.SnakeCaseStrategy.class)
-public class ProductDTO {
-
-    private Long id;
+public class TopRatedReportDTO {
     private String name;
-    private String description;
+    private Double stock;
     private List<String> categories;
     private List<String> platforms;
-    private Double price;
-    private Double score;
-    private List<String> imageUrl;
-    private Double stock;
-    private Timestamp releaseDate;
 }
